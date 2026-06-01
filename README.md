@@ -1,36 +1,115 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Deutsch Tutor 🇩🇪
 
-## Getting Started
+A self-paced web app to learn German from zero toward B1/B2, with a tight
+**teach → quiz** loop and spaced repetition. Explanations and translations are
+switchable between **Russian and English**. Everything runs locally — no
+backend, no accounts; progress lives in the browser.
 
-First, run the development server:
+The A1 level is complete: the full Goethe-Zertifikat A1 vocabulary (~800 words),
+17 grammar topics, and 30 lessons.
+
+## Features
+
+- **Course** — themed vocabulary + grammar lessons that walk you through
+  *learn the rule → see examples → drill it*, with auto-generated exercises.
+- **Grammar** — reference pages with declension/conjugation tables and examples
+  (articles → cases → Perfekt, telling time, writing numbers & dates).
+- **Vocabulary** — searchable, filterable by level / part of speech / category,
+  showing every form (article + plural, full conjugation, comparatives).
+- **Trainer** — flashcard drills over the full wordlist, filterable by level and
+  category, feeding spaced repetition.
+- **Practice** — an SM-2-style SRS review session of everything currently due.
+- **Bilingual** — one toggle switches all explanations between RU and EN.
+
+## Tech stack
+
+- [Next.js 16](https://nextjs.org) (App Router) · React 19 · TypeScript
+- Tailwind CSS v4
+- [Zustand](https://github.com/pmndrs/zustand) persisted to `localStorage`
+- No server, no database — fully client-side and statically deployable
+
+## Getting started
+
+This project uses **pnpm**.
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+pnpm install
+pnpm dev          # http://localhost:3000
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Other scripts:
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```bash
+pnpm build               # production build (also runs the TS type-check)
+pnpm exec tsc --noEmit   # type-check only
+pnpm lint
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+> Accessing the dev server over a LAN IP? It's allowlisted in
+> `next.config.ts` (`allowedDevOrigins`) so HMR works off-localhost.
 
-## Learn More
+## Project structure
 
-To learn more about Next.js, take a look at the following resources:
+```
+src/
+  app/                 # routes: /, /learn, /grammar, /vocabulary, /trainer, /practice, /settings
+  components/          # UI primitives, Nav, GrammarView, WordCard, Flashcard, ExerciseRunner
+  lib/
+    types.ts           # domain model (LocalizedText, Word, Exercise union, Lesson, …)
+    srs.ts             # SM-2-lite spaced-repetition scheduler
+    store.ts           # Zustand store persisted to localStorage
+    i18n.ts            # RU/EN UI strings + content resolver
+  content/
+    vocabulary/        # core words (rich: full forms + examples) used in lessons
+    wordlist/          # extended Goethe A1 wordlist (lighter; trainer) + imported.ts
+    grammar.ts         # grammar topics (tables + examples)
+    exercises.ts       # hand-authored exercises
+    generate.ts        # derives exercises + lessons from theme word lists
+    lessons.ts         # grammar lessons (themed lessons are generated)
+    themes.ts          # course themes  ·  categories.ts  # all category metadata
+    index.ts           # merges everything; lookup maps; public API
+scripts/
+  import-wortliste.mjs # data/goethe-a1.tsv  →  src/content/wordlist/imported.ts
+  recategorize.mjs     # POS-aware category fixes for the TSV
+data/                  # import sources (Goethe TSV; PDFs are gitignored)
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Content model
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+Vocabulary has two tiers:
 
-## Deploy on Vercel
+- **core** (`src/content/vocabulary/<theme>.ts`) — rich words with full forms and
+  example sentences. These power the guided **course** lessons.
+- **extended** (`src/content/wordlist/<category>.ts` + generated `imported.ts`) —
+  the rest of the Goethe A1 list in compact form, drilled in the **Trainer**.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+`content/index.ts` merges them: `words` = core; `allWords` = core + extended
+(de-duplicated by lemma, core wins).
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+### Growing the vocabulary
+
+- Add a rich, lesson-worthy word → append to the right `vocabulary/<theme>.ts`.
+- Bulk-import the official list → edit `data/goethe-a1.tsv`, then:
+  ```bash
+  node scripts/recategorize.mjs    # optional: fix categories by POS/lemma
+  node scripts/import-wortliste.mjs
+  ```
+
+### Adding grammar / lessons
+
+- A grammar topic is a data object in `src/content/grammar.ts` (title, bilingual
+  explanation, tables, examples).
+- A lesson is a sequence of `grammar` / `vocab` / `exercise` steps in
+  `src/content/lessons.ts`; themed vocab lessons are generated in `generate.ts`.
+
+## Data sources
+
+The Goethe-Institut Wortlisten (PDFs in `data/`) are **gitignored** — they are
+copyrighted import sources used to build `data/goethe-a1.tsv`; the app itself
+never loads them at runtime.
+
+## Roadmap
+
+- A2 → B1 → B2 levels (the content pipeline scales directly into them)
+- Audio / text-to-speech pronunciation
+- More exercise types (listening, sentence ordering)
