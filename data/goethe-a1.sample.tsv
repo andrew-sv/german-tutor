@@ -1,0 +1,12 @@
+# Goethe A1 Wortliste — import template (TAB-separated).
+# Copy to data/goethe-a1.tsv, fill in rows, then run:
+#   node scripts/import-wortliste.mjs
+# Columns: category, pos, article, lemma, plural, ru, en
+# - article is der/die/das for nouns (blank otherwise)
+# - ru/en may be left blank now and filled in later
+category	pos	article	lemma	plural	ru	en
+places	noun	der	Bahnhof	Bahnhöfe	вокзал	station
+food	noun	das	Brot	Brote	хлеб	bread
+verbs	verb		arbeiten			to work
+adjectives	adjective		schnell			fast
+function	preposition		mit			with
