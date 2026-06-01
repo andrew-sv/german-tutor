@@ -39,3 +39,6 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# source PDFs (copyrighted Goethe wordlists; not needed at runtime)
+data/*.pdf
