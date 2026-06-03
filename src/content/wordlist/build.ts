@@ -2,7 +2,7 @@
 // to a single line and produce lightweight Word objects (no full conjugation /
 // examples) suitable for the vocabulary trainer.
 
-import type { Gender, Word } from "@/lib/types";
+import type { Gender, LocalizedText, Word } from "@/lib/types";
 
 /** ASCII slug for stable ids: ä→a, ö→o, ü→u, ß→ss, drop the rest. */
 function slug(s: string): string {
@@ -15,14 +15,18 @@ function slug(s: string): string {
     .replace(/[^a-z0-9]+/g, "");
 }
 
-/** Noun: gender, lemma, plural (undefined if none), ru, en. */
+const tr = (ru: string, en: string, uk?: string): LocalizedText =>
+  uk ? { ru, en, uk } : { ru, en };
+
+/** Noun: gender, lemma, plural (undefined if none), ru, en, theme, [uk]. */
 export const n = (
   g: Gender,
   lemma: string,
   plural: string | undefined,
   ru: string,
   en: string,
-  theme: string
+  theme: string,
+  uk?: string
 ): Word => ({
   id: `x-${slug(lemma)}`,
   level: "A1",
@@ -30,32 +34,32 @@ export const n = (
   theme,
   lemma,
   pos: "noun",
-  translation: { ru, en },
+  translation: tr(ru, en, uk),
   noun: { gender: g, plural },
   examples: [],
 });
 
 /** Verb (no conjugation table at this tier). */
-export const v = (lemma: string, ru: string, en: string, theme: string): Word => ({
+export const v = (lemma: string, ru: string, en: string, theme: string, uk?: string): Word => ({
   id: `x-${slug(lemma)}`,
   level: "A1",
   tier: "extended",
   theme,
   lemma,
   pos: "verb",
-  translation: { ru, en },
+  translation: tr(ru, en, uk),
   examples: [],
 });
 
 /** Adjective. */
-export const a = (lemma: string, ru: string, en: string, theme: string): Word => ({
+export const a = (lemma: string, ru: string, en: string, theme: string, uk?: string): Word => ({
   id: `x-${slug(lemma)}`,
   level: "A1",
   tier: "extended",
   theme,
   lemma,
   pos: "adjective",
-  translation: { ru, en },
+  translation: tr(ru, en, uk),
   examples: [],
 });
 
@@ -65,7 +69,8 @@ export const w = (
   lemma: string,
   ru: string,
   en: string,
-  theme: string
+  theme: string,
+  uk?: string
 ): Word => ({
   id: `x-${slug(lemma)}`,
   level: "A1",
@@ -73,6 +78,6 @@ export const w = (
   theme,
   lemma,
   pos,
-  translation: { ru, en },
+  translation: tr(ru, en, uk),
   examples: [],
 });

@@ -2,22 +2,22 @@ import type { Word } from "@/lib/types";
 import { w } from "./build";
 
 const T = "numbers";
-const num = (lemma: string, ru: string, en: string) => w("numeral", lemma, ru, en, T);
+const num = (lemma: string, ru: string, en: string, uk: string) => w("numeral", lemma, ru, en, T, uk);
 
 export const numbersExtra: Word[] = [
-  num("dreizehn", "тринадцать", "thirteen"),
-  num("vierzehn", "четырнадцать", "fourteen"),
-  num("fünfzehn", "пятнадцать", "fifteen"),
-  num("sechzehn", "шестнадцать", "sixteen"),
-  num("siebzehn", "семнадцать", "seventeen"),
-  num("achtzehn", "восемнадцать", "eighteen"),
-  num("neunzehn", "девятнадцать", "nineteen"),
-  num("dreißig", "тридцать", "thirty"),
-  num("vierzig", "сорок", "forty"),
-  num("fünfzig", "пятьдесят", "fifty"),
-  num("sechzig", "шестьдесят", "sixty"),
-  num("siebzig", "семьдесят", "seventy"),
-  num("achtzig", "восемьдесят", "eighty"),
-  num("neunzig", "девяносто", "ninety"),
-  num("tausend", "тысяча", "thousand"),
+  num("dreizehn", "тринадцать", "thirteen", "тринадцять"),
+  num("vierzehn", "четырнадцать", "fourteen", "чотирнадцять"),
+  num("fünfzehn", "пятнадцать", "fifteen", "п'ятнадцять"),
+  num("sechzehn", "шестнадцать", "sixteen", "шістнадцять"),
+  num("siebzehn", "семнадцать", "seventeen", "сімнадцять"),
+  num("achtzehn", "восемнадцать", "eighteen", "вісімнадцять"),
+  num("neunzehn", "девятнадцать", "nineteen", "дев'ятнадцять"),
+  num("dreißig", "тридцать", "thirty", "тридцять"),
+  num("vierzig", "сорок", "forty", "сорок"),
+  num("fünfzig", "пятьдесят", "fifty", "п'ятдесят"),
+  num("sechzig", "шестьдесят", "sixty", "шістдесят"),
+  num("siebzig", "семьдесят", "seventy", "сімдесят"),
+  num("achtzig", "восемьдесят", "eighty", "вісімдесят"),
+  num("neunzig", "девяносто", "ninety", "дев'яносто"),
+  num("tausend", "тысяча", "thousand", "тисяча"),
 ];
