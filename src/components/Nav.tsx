@@ -48,7 +48,7 @@ export function Nav() {
           })}
         </div>
         <div className="ml-2 flex items-center rounded-lg border border-zinc-200 p-0.5 text-xs font-semibold">
-          {(["ru", "en"] as Locale[]).map((l) => (
+          {(["ru", "uk", "en"] as Locale[]).map((l) => (
             <button
               key={l}
               onClick={() => setLocale(l)}

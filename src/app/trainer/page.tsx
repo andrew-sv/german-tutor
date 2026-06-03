@@ -66,7 +66,7 @@ function Trainer() {
                 level === l ? "bg-zinc-900 text-white" : "bg-zinc-100 text-zinc-600 hover:bg-zinc-200"
               )}
             >
-              {l === "all" ? tc({ ru: "Все уровни", en: "All levels" }) : l}
+              {l === "all" ? tc({ ru: "Все уровни", en: "All levels", uk: "Усі рівні" }) : l}
             </button>
           ))}
         </div>

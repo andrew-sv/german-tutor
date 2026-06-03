@@ -21,7 +21,7 @@ function Curriculum() {
             <section key={level} className="opacity-50">
               <div className="mb-2 flex items-center gap-2">
                 <Badge tone="zinc">{level}</Badge>
-                <span className="text-sm text-zinc-400">{tc({ ru: "скоро", en: "coming soon" })}</span>
+                <span className="text-sm text-zinc-400">{tc({ ru: "скоро", en: "coming soon", uk: "скоро" })}</span>
               </div>
             </section>
           );

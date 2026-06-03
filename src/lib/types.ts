@@ -1,13 +1,18 @@
 // Core domain model for the German tutor.
-// All learner-facing explanations/translations are bilingual (RU/EN) so the
-// native language can be switched at any time with zero extra content lookups.
+// All learner-facing explanations/translations carry the native language so it
+// can be switched at any time with zero extra content lookups.
 
-export type Locale = "ru" | "en";
+export type Locale = "ru" | "en" | "uk";
 
-/** A piece of text available in both supported native languages. */
+/**
+ * A piece of text in the supported native languages. `ru` and `en` are always
+ * present; `uk` (Ukrainian) is optional and falls back to `ru` then `en` when
+ * absent (see i18n `pick`). Translate content into `uk` progressively.
+ */
 export interface LocalizedText {
   ru: string;
   en: string;
+  uk?: string;
 }
 
 export type CEFRLevel = "A1" | "A2" | "B1" | "B2";

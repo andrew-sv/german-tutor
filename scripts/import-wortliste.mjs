@@ -45,7 +45,7 @@ const header = lines[0].split("\t").map((h) => h.trim().toLowerCase());
 const col = (name) => header.indexOf(name);
 const idx = {
   category: col("category"), pos: col("pos"), article: col("article"),
-  lemma: col("lemma"), plural: col("plural"), ru: col("ru"), en: col("en"),
+  lemma: col("lemma"), plural: col("plural"), ru: col("ru"), en: col("en"), uk: col("uk"),
 };
 if (idx.lemma < 0 || idx.pos < 0) throw new Error('Header must include at least "pos" and "lemma".');
 
@@ -67,6 +67,10 @@ for (const line of lines.slice(1)) {
   const category = get(idx.category) || "a1list";
   const ru = get(idx.ru) || lemma;
   const en = get(idx.en) || lemma;
+  const uk = get(idx.uk); // optional Ukrainian translation
+  const translation = uk
+    ? `{ ru: ${jstr(ru)}, en: ${jstr(en)}, uk: ${jstr(uk)} }`
+    : `{ ru: ${jstr(ru)}, en: ${jstr(en)} }`;
 
   const parts = [
     `id: ${jstr(id)}`,
@@ -75,7 +79,7 @@ for (const line of lines.slice(1)) {
     `theme: ${jstr(category)}`,
     `lemma: ${jstr(lemma)}`,
     `pos: ${jstr(pos)}`,
-    `translation: { ru: ${jstr(ru)}, en: ${jstr(en)} }`,
+    `translation: ${translation}`,
   ];
 
   if (pos === "noun") {

@@ -8,11 +8,11 @@ import { cn } from "@/lib/cn";
 import { WordCard } from "@/components/WordCard";
 
 const LEVELS = ["all", ...CEFR_LEVELS.filter((l) => allWords.some((w) => w.level === l))] as const;
-const POS_FILTERS: { value: PartOfSpeech | "all"; ru: string; en: string }[] = [
-  { value: "all", ru: "Все", en: "All" },
-  { value: "noun", ru: "Сущ.", en: "Nouns" },
-  { value: "verb", ru: "Глаг.", en: "Verbs" },
-  { value: "adjective", ru: "Прил.", en: "Adjectives" },
+const POS_FILTERS: { value: PartOfSpeech | "all"; ru: string; en: string; uk: string }[] = [
+  { value: "all", ru: "Все", en: "All", uk: "Усі" },
+  { value: "noun", ru: "Сущ.", en: "Nouns", uk: "Ім." },
+  { value: "verb", ru: "Глаг.", en: "Verbs", uk: "Дієсл." },
+  { value: "adjective", ru: "Прил.", en: "Adjectives", uk: "Прикм." },
 ];
 
 function Chip({ active, onClick, children }: { active: boolean; onClick: () => void; children: React.ReactNode }) {
@@ -64,7 +64,7 @@ export default function VocabularyPage() {
       <div className="flex flex-wrap items-center gap-2">
         {LEVELS.map((l) => (
           <Chip key={l} active={level === l} onClick={() => setLevel(l as CEFRLevel | "all")}>
-            {l === "all" ? tc({ ru: "Все уровни", en: "All levels" }) : l}
+            {l === "all" ? tc({ ru: "Все уровни", en: "All levels", uk: "Усі рівні" }) : l}
           </Chip>
         ))}
         <span className="mx-1 text-zinc-300">|</span>
@@ -77,7 +77,7 @@ export default function VocabularyPage() {
 
       <div className="flex flex-wrap items-center gap-2">
         <Chip active={theme === "all"} onClick={() => setTheme("all")}>
-          {tc({ ru: "Все темы", en: "All themes" })}
+          {tc({ ru: "Все темы", en: "All themes", uk: "Усі теми" })}
         </Chip>
         {categories.map((c) => (
           <Chip key={c.id} active={theme === c.id} onClick={() => setTheme(c.id)}>

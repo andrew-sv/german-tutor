@@ -23,6 +23,7 @@ function Settings() {
           {(
             [
               ["ru", t("russian")],
+              ["uk", t("ukrainian")],
               ["en", t("english")],
             ] as [Locale, string][]
           ).map(([l, label]) => (

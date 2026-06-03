@@ -4,16 +4,16 @@ import { useI18n } from "@/lib/i18n";
 import { ARTICLE, type Word } from "@/lib/types";
 import { Badge, Card } from "./ui";
 
-const POS_LABEL: Record<string, { ru: string; en: string; tone: "blue" | "green" | "amber" | "zinc" }> = {
-  noun: { ru: "сущ.", en: "noun", tone: "blue" },
-  verb: { ru: "глаг.", en: "verb", tone: "green" },
-  adjective: { ru: "прил.", en: "adj.", tone: "amber" },
-  adverb: { ru: "нареч.", en: "adv.", tone: "zinc" },
-  preposition: { ru: "предл.", en: "prep.", tone: "zinc" },
-  pronoun: { ru: "мест.", en: "pron.", tone: "zinc" },
-  conjunction: { ru: "союз", en: "conj.", tone: "zinc" },
-  numeral: { ru: "числ.", en: "num.", tone: "zinc" },
-  phrase: { ru: "фраза", en: "phrase", tone: "zinc" },
+const POS_LABEL: Record<string, { ru: string; en: string; uk: string; tone: "blue" | "green" | "amber" | "zinc" }> = {
+  noun: { ru: "сущ.", en: "noun", uk: "ім.", tone: "blue" },
+  verb: { ru: "глаг.", en: "verb", uk: "дієсл.", tone: "green" },
+  adjective: { ru: "прил.", en: "adj.", uk: "прикм.", tone: "amber" },
+  adverb: { ru: "нареч.", en: "adv.", uk: "присл.", tone: "zinc" },
+  preposition: { ru: "предл.", en: "prep.", uk: "прийм.", tone: "zinc" },
+  pronoun: { ru: "мест.", en: "pron.", uk: "займ.", tone: "zinc" },
+  conjunction: { ru: "союз", en: "conj.", uk: "спол.", tone: "zinc" },
+  numeral: { ru: "числ.", en: "num.", uk: "числ.", tone: "zinc" },
+  phrase: { ru: "фраза", en: "phrase", uk: "фраза", tone: "zinc" },
 };
 
 function Headword({ word }: { word: Word }) {
@@ -66,8 +66,8 @@ function Forms({ word }: { word: Word }) {
           <Badge tone="zinc">Partizip II: {word.verb.partizipII}</Badge>
           {word.verb.praeteritum3sg && <Badge tone="zinc">Präteritum: {word.verb.praeteritum3sg}</Badge>}
           <Badge tone={word.verb.auxiliary === "sein" ? "amber" : "zinc"}>Hilfsverb: {word.verb.auxiliary}</Badge>
-          {word.verb.separable && <Badge tone="blue">{tc({ ru: "отделяемый", en: "separable" })}</Badge>}
-          {word.verb.irregular && <Badge tone="red">{tc({ ru: "неправильный", en: "irregular" })}</Badge>}
+          {word.verb.separable && <Badge tone="blue">{tc({ ru: "отделяемый", en: "separable", uk: "відокремлюваний" })}</Badge>}
+          {word.verb.irregular && <Badge tone="red">{tc({ ru: "неправильный", en: "irregular", uk: "неправильний" })}</Badge>}
         </div>
       </div>
     );
