@@ -6,9 +6,28 @@ import {
   type Exercise,
   type Lesson,
   type LessonStep,
+  type VerbConjugation,
   type VocabTheme,
   type Word,
 } from "@/lib/types";
+
+// Persons cycled through so conjugation drills aren't all "ich".
+const PERSONS: (keyof VerbConjugation)[] = ["ich", "du", "erSieEs", "wir", "ihr", "sieSie"];
+const PERSON_LABEL: Record<keyof VerbConjugation, string> = {
+  ich: "ich",
+  du: "du",
+  erSieEs: "er/sie/es",
+  wir: "wir",
+  ihr: "ihr",
+  sieSie: "sie/Sie",
+};
+
+/** Deterministic person per verb (stable across renders) from the word id. */
+function personFor(id: string): keyof VerbConjugation {
+  let h = 0;
+  for (let i = 0; i < id.length; i++) h = (h * 31 + id.charCodeAt(i)) >>> 0;
+  return PERSONS[h % PERSONS.length];
+}
 
 /** German display form: nouns get their article, everything else the lemma. */
 function display(word: Word): string {
@@ -34,17 +53,19 @@ function articlePickFor(word: Word): Exercise | null {
   };
 }
 
-/** Conjugate-for-ich drill for a verb. */
+/** Conjugation drill for a verb — the person varies per verb (not always ich). */
 function conjugationFor(word: Word): Exercise | null {
   if (word.pos !== "verb" || !word.verb) return null;
+  const person = personFor(word.id);
+  const label = PERSON_LABEL[person];
   return {
     id: `gx-conj-${word.id}`,
     level: word.level,
     kind: "conjugation",
-    prompt: { ru: `Проспрягайте «${word.lemma}» для «ich».`, en: `Conjugate “${word.lemma}” for “ich”.` },
+    prompt: { ru: `Проспрягайте «${word.lemma}» для «${label}».`, en: `Conjugate “${word.lemma}” for “${label}”.` },
     infinitive: word.lemma,
-    person: "ich",
-    accepted: [word.verb.praesens.ich],
+    person,
+    accepted: [word.verb.praesens[person]],
     wordId: word.id,
     grammarTopicId: "a1-present-regular",
   };

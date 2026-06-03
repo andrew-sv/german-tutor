@@ -501,4 +501,461 @@ export const exercises: Exercise[] = [
     explanation: { ru: "После am порядковое + -en: am dritten.", en: "After am, ordinal + -en: am dritten." },
     grammarTopicId: "a1-numbers-dates",
   },
+
+  // --- More present tense (varied verbs & persons) ---
+  {
+    id: "ex-pres-conj-wohnen-er",
+    level: "A1",
+    kind: "conjugation",
+    prompt: { ru: "Проспрягайте «wohnen» для «er».", en: "Conjugate “wohnen” for “er”." },
+    infinitive: "wohnen",
+    person: "erSieEs",
+    accepted: ["wohnt"],
+    explanation: { ru: "er wohnt — окончание -t.", en: "er wohnt — ending -t." },
+    grammarTopicId: "a1-present-regular",
+    wordId: "wohnen",
+  },
+  {
+    id: "ex-pres-conj-lernen-wir",
+    level: "A1",
+    kind: "conjugation",
+    prompt: { ru: "Проспрягайте «lernen» для «wir».", en: "Conjugate “lernen” for “wir”." },
+    infinitive: "lernen",
+    person: "wir",
+    accepted: ["lernen"],
+    explanation: { ru: "wir lernen — окончание -en.", en: "wir lernen — ending -en." },
+    grammarTopicId: "a1-present-regular",
+    wordId: "lernen",
+  },
+  {
+    id: "ex-pres-conj-machen-sie",
+    level: "A1",
+    kind: "conjugation",
+    prompt: { ru: "Проспрягайте «machen» для «sie/Sie».", en: "Conjugate “machen” for “sie/Sie”." },
+    infinitive: "machen",
+    person: "sieSie",
+    accepted: ["machen"],
+    explanation: { ru: "sie/Sie machen — окончание -en.", en: "sie/Sie machen — ending -en." },
+    grammarTopicId: "a1-present-regular",
+    wordId: "machen",
+  },
+  {
+    id: "ex-pres-conj-arbeiten-du",
+    level: "A1",
+    kind: "conjugation",
+    prompt: { ru: "Проспрягайте «arbeiten» для «du».", en: "Conjugate “arbeiten” for “du”." },
+    infinitive: "arbeiten",
+    person: "du",
+    accepted: ["arbeitest"],
+    explanation: { ru: "После основы на -t вставляется -e-: du arbeitest.", en: "An -e- is inserted after a -t stem: du arbeitest." },
+    grammarTopicId: "a1-present-regular",
+    wordId: "arbeiten",
+  },
+  {
+    id: "ex-pres-mc-endings",
+    level: "A1",
+    kind: "multiple-choice",
+    prompt: { ru: "Выберите правильную форму.", en: "Choose the correct form." },
+    question: "Er ___ in Berlin.",
+    options: ["wohne", "wohnst", "wohnt", "wohnen"],
+    correctIndex: 2,
+    explanation: { ru: "er wohnt — 3-е лицо ед. ч., окончание -t.", en: "er wohnt — 3rd person singular, ending -t." },
+    grammarTopicId: "a1-present-regular",
+    wordId: "wohnen",
+  },
+  {
+    id: "ex-pres-fill-trinken-du",
+    level: "A1",
+    kind: "fill-blank",
+    prompt: { ru: "Вставьте «trinken» для «du».", en: "Insert “trinken” for “du”." },
+    template: "Was ___ du gern?",
+    accepted: ["trinkst"],
+    explanation: { ru: "du trinkst — окончание -st.", en: "du trinkst — ending -st." },
+    grammarTopicId: "a1-present-regular",
+    wordId: "trinken",
+  },
+  {
+    id: "ex-pres-fill-spielen-ihr",
+    level: "A1",
+    kind: "fill-blank",
+    prompt: { ru: "Вставьте «spielen» для «ihr».", en: "Insert “spielen” for “ihr”." },
+    template: "___ ihr Fußball?",
+    accepted: ["Spielt", "spielt"],
+    explanation: { ru: "ihr spielt — окончание -t.", en: "ihr spielt — ending -t." },
+    grammarTopicId: "a1-present-regular",
+  },
+
+  // --- Extra articles (a1-l1) ---
+  {
+    id: "ex-art-frau", level: "A1", kind: "article-pick",
+    prompt: { ru: "Какой артикль у слова «Frau»?", en: "Which article does “Frau” take?" },
+    noun: "Frau", correct: "f",
+    explanation: { ru: "die Frau — женский род.", en: "die Frau — feminine." },
+    wordId: "frau", grammarTopicId: "a1-articles",
+  },
+  {
+    id: "ex-art-kind", level: "A1", kind: "article-pick",
+    prompt: { ru: "Какой артикль у слова «Kind»?", en: "Which article does “Kind” take?" },
+    noun: "Kind", correct: "n",
+    explanation: { ru: "das Kind — средний род.", en: "das Kind — neuter." },
+    wordId: "kind", grammarTopicId: "a1-articles",
+  },
+
+  // --- Extra sein & haben (a1-l3) ---
+  {
+    id: "ex-sh-er-ist", level: "A1", kind: "fill-blank",
+    prompt: { ru: "Вставьте «sein» для «er».", en: "Insert “sein” for “er”." },
+    template: "Er ___ Student.", accepted: ["ist"],
+    explanation: { ru: "er ist.", en: "er ist." }, grammarTopicId: "a1-sein-haben", wordId: "sein",
+  },
+  {
+    id: "ex-sh-wir-haben", level: "A1", kind: "fill-blank",
+    prompt: { ru: "Вставьте «haben» для «wir».", en: "Insert “haben” for “wir”." },
+    template: "Wir ___ Zeit.", accepted: ["haben"],
+    explanation: { ru: "wir haben.", en: "wir haben." }, grammarTopicId: "a1-sein-haben", wordId: "haben",
+  },
+  {
+    id: "ex-sh-ihr-seid", level: "A1", kind: "multiple-choice",
+    prompt: { ru: "Выберите форму «sein».", en: "Choose the form of “sein”." },
+    question: "Ihr ___ müde.", options: ["seid", "sind", "bist", "ist"], correctIndex: 0,
+    explanation: { ru: "ihr seid.", en: "ihr seid." }, grammarTopicId: "a1-sein-haben", wordId: "sein",
+  },
+
+  // --- Extra pronouns ---
+  {
+    id: "ex-pron-er", level: "A1", kind: "multiple-choice",
+    prompt: { ru: "Выберите местоимение.", en: "Choose the pronoun." },
+    question: "___ ist mein Bruder.", options: ["Er", "Sie", "Es", "Wir"], correctIndex: 0,
+    explanation: { ru: "er — он.", en: "er — he." }, grammarTopicId: "a1-pronouns",
+  },
+  {
+    id: "ex-pron-ihr", level: "A1", kind: "multiple-choice",
+    prompt: { ru: "Выберите местоимение (вы, неформ. мн.).", en: "Choose the pronoun (you, informal pl.)." },
+    question: "Seid ___ müde?", options: ["du", "ihr", "wir", "Sie"], correctIndex: 1,
+    explanation: { ru: "ihr seid — вы (мн., неформ.).", en: "ihr seid — you (pl., informal)." }, grammarTopicId: "a1-pronouns",
+  },
+  {
+    id: "ex-pron-wir", level: "A1", kind: "fill-blank",
+    prompt: { ru: "Вставьте местоимение (мы).", en: "Insert the pronoun (we)." },
+    template: "___ lernen Deutsch.", accepted: ["Wir", "wir"],
+    explanation: { ru: "wir — мы.", en: "wir — we." }, grammarTopicId: "a1-pronouns",
+  },
+
+  // --- Extra stem-changing verbs ---
+  {
+    id: "ex-stem-essen-er", level: "A1", kind: "conjugation",
+    prompt: { ru: "Проспрягайте «essen» для «er».", en: "Conjugate “essen” for “er”." },
+    infinitive: "essen", person: "erSieEs", accepted: ["isst"],
+    explanation: { ru: "e → i: er isst.", en: "e → i: er isst." }, grammarTopicId: "a1-stem-change", wordId: "essen",
+  },
+  {
+    id: "ex-stem-sehen-du", level: "A1", kind: "conjugation",
+    prompt: { ru: "Проспрягайте «sehen» для «du».", en: "Conjugate “sehen” for “du”." },
+    infinitive: "sehen", person: "du", accepted: ["siehst"],
+    explanation: { ru: "e → ie: du siehst.", en: "e → ie: du siehst." }, grammarTopicId: "a1-stem-change",
+  },
+  {
+    id: "ex-stem-lesen-er", level: "A1", kind: "conjugation",
+    prompt: { ru: "Проспрягайте «lesen» для «er».", en: "Conjugate “lesen” for “er”." },
+    infinitive: "lesen", person: "erSieEs", accepted: ["liest"],
+    explanation: { ru: "e → ie: er liest.", en: "e → ie: er liest." }, grammarTopicId: "a1-stem-change",
+  },
+
+  // --- Extra modal verbs ---
+  {
+    id: "ex-modal-darf", level: "A1", kind: "fill-blank",
+    prompt: { ru: "Вставьте «dürfen» для «ich».", en: "Insert “dürfen” for “ich”." },
+    template: "___ ich hier rauchen?", accepted: ["Darf", "darf"],
+    explanation: { ru: "ich darf — без окончания.", en: "ich darf — no ending." }, grammarTopicId: "a1-modal-verbs",
+  },
+  {
+    id: "ex-modal-wollen-wir", level: "A1", kind: "multiple-choice",
+    prompt: { ru: "Выберите «wollen» для «wir».", en: "Choose “wollen” for “wir”." },
+    question: "Wir ___ nach Hause gehen.", options: ["will", "willst", "wollen", "wollt"], correctIndex: 2,
+    explanation: { ru: "wir wollen.", en: "wir wollen." }, grammarTopicId: "a1-modal-verbs",
+  },
+  {
+    id: "ex-modal-infinitiv", level: "A1", kind: "multiple-choice",
+    prompt: { ru: "Где стоит основной глагол?", en: "Where does the main verb go?" },
+    question: "Ich kann gut ___.", options: ["schwimme", "schwimmt", "schwimmen", "geschwommen"], correctIndex: 2,
+    explanation: { ru: "Основной глагол — инфинитив в конце.", en: "The main verb is an infinitive at the end." }, grammarTopicId: "a1-modal-verbs",
+  },
+
+  // --- Extra Akkusativ ---
+  {
+    id: "ex-akk-eine", level: "A1", kind: "multiple-choice",
+    prompt: { ru: "Винительный падеж. Выберите артикль.", en: "Accusative. Choose the article." },
+    question: "Ich kaufe ___ Lampe.", options: ["ein", "einen", "eine", "einem"], correctIndex: 2,
+    explanation: { ru: "Женский род не меняется: eine Lampe.", en: "Feminine is unchanged: eine Lampe." }, grammarTopicId: "a1-akkusativ",
+  },
+  {
+    id: "ex-akk-das", level: "A1", kind: "fill-blank",
+    prompt: { ru: "Вставьте артикль (Akkusativ, ср. род).", en: "Insert the article (accusative, neuter)." },
+    template: "Wir sehen ___ Kind.", accepted: ["das"],
+    explanation: { ru: "Средний род не меняется: das Kind.", en: "Neuter is unchanged: das Kind." }, grammarTopicId: "a1-akkusativ",
+  },
+  {
+    id: "ex-akk-apfel", level: "A1", kind: "multiple-choice",
+    prompt: { ru: "Винительный падеж. Выберите артикль.", en: "Accusative. Choose the article." },
+    question: "Ich möchte ___ Apfel.", options: ["ein", "eine", "einen", "einem"], correctIndex: 2,
+    explanation: { ru: "Мужской род: ein → einen.", en: "Masculine: ein → einen." }, grammarTopicId: "a1-akkusativ",
+  },
+
+  // --- Extra Dativ ---
+  {
+    id: "ex-dat-mir-gefallen", level: "A1", kind: "multiple-choice",
+    prompt: { ru: "Выберите местоимение (Dativ).", en: "Choose the pronoun (dative)." },
+    question: "Das Buch gefällt ___.", options: ["mich", "mir", "ich", "mein"], correctIndex: 1,
+    explanation: { ru: "gefallen + Dativ: mir.", en: "gefallen + dative: mir." }, grammarTopicId: "a1-dativ",
+  },
+  {
+    id: "ex-dat-der-bahn", level: "A1", kind: "fill-blank",
+    prompt: { ru: "Вставьте артикль после «mit» (Dativ).", en: "Insert the article after “mit” (dative)." },
+    template: "Ich fahre mit ___ Bahn.", accepted: ["der"],
+    explanation: { ru: "mit + Dativ: die Bahn → der Bahn.", en: "mit + dative: die Bahn → der Bahn." }, grammarTopicId: "a1-dativ",
+  },
+  {
+    id: "ex-dat-helfen-dir", level: "A1", kind: "multiple-choice",
+    prompt: { ru: "Выберите местоимение (Dativ).", en: "Choose the pronoun (dative)." },
+    question: "Ich helfe ___.", options: ["dich", "dir", "du", "dein"], correctIndex: 1,
+    explanation: { ru: "helfen + Dativ: dir.", en: "helfen + dative: dir." }, grammarTopicId: "a1-dativ",
+  },
+
+  // --- Extra possessives ---
+  {
+    id: "ex-poss-deine", level: "A1", kind: "fill-blank",
+    prompt: { ru: "Вставьте «твоя» (ж. род).", en: "Insert “your” (feminine)." },
+    template: "Wo ist ___ Tasche?", accepted: ["deine"],
+    explanation: { ru: "die Tasche → deine Tasche.", en: "die Tasche → deine Tasche." }, grammarTopicId: "a1-possessives",
+  },
+  {
+    id: "ex-poss-dein-vater", level: "A1", kind: "multiple-choice",
+    prompt: { ru: "Выберите притяжательный артикль.", en: "Choose the possessive." },
+    question: "Ist das ___ Vater?", options: ["dein", "deine", "deinen", "deiner"], correctIndex: 0,
+    explanation: { ru: "der Vater → dein Vater (м. род).", en: "der Vater → dein Vater (masculine)." }, grammarTopicId: "a1-possessives",
+  },
+  {
+    id: "ex-poss-seinen", level: "A1", kind: "multiple-choice",
+    prompt: { ru: "Притяжательное в Akkusativ.", en: "Possessive in the accusative." },
+    question: "Er sucht ___ Schlüssel.", options: ["sein", "seine", "seinen", "seinem"], correctIndex: 2,
+    explanation: { ru: "der Schlüssel, Akk м.р.: seinen.", en: "der Schlüssel, masc. accusative: seinen." }, grammarTopicId: "a1-possessives",
+  },
+
+  // --- Extra negation ---
+  {
+    id: "ex-neg-auto", level: "A1", kind: "multiple-choice",
+    prompt: { ru: "Отрицание. Выберите слово.", en: "Negation. Choose the word." },
+    question: "Ich habe ___ Auto.", options: ["nicht", "kein", "keine", "keinen"], correctIndex: 1,
+    explanation: { ru: "das Auto → kein Auto.", en: "das Auto → kein Auto." }, grammarTopicId: "a1-negation",
+  },
+  {
+    id: "ex-neg-buch", level: "A1", kind: "multiple-choice",
+    prompt: { ru: "Отрицание с притяжательным артиклем.", en: "Negation with a possessive article." },
+    question: "Das ist ___ mein Buch.", options: ["kein", "nicht", "keine", "nichts"], correctIndex: 1,
+    explanation: { ru: "Перед mein — nicht.", en: "Before mein use nicht." }, grammarTopicId: "a1-negation",
+  },
+  {
+    id: "ex-neg-geld", level: "A1", kind: "fill-blank",
+    prompt: { ru: "Вставьте отрицание.", en: "Insert the negation." },
+    template: "Er hat ___ Geld.", accepted: ["kein"],
+    explanation: { ru: "Geld без артикля → kein.", en: "Geld without article → kein." }, grammarTopicId: "a1-negation",
+  },
+
+  // --- Extra separable verbs ---
+  {
+    id: "ex-sep-auf-steht", level: "A1", kind: "multiple-choice",
+    prompt: { ru: "Глагол aufstehen. Выберите форму.", en: "The verb aufstehen. Choose the form." },
+    question: "Wann ___ du auf?", options: ["aufstehst", "stehst", "steht", "stehen"], correctIndex: 1,
+    explanation: { ru: "Приставка auf в конце: Wann stehst du auf?", en: "Prefix auf at the end: Wann stehst du auf?" }, grammarTopicId: "a1-separable",
+  },
+  {
+    id: "ex-sep-anrufen", level: "A1", kind: "fill-blank",
+    prompt: { ru: "Где приставка? (anrufen)", en: "Where is the prefix? (anrufen)" },
+    template: "Er ruft seine Mutter ___.", accepted: ["an"],
+    explanation: { ru: "anrufen → приставка an в конце.", en: "anrufen → prefix an at the end." }, grammarTopicId: "a1-separable",
+  },
+  {
+    id: "ex-sep-licht", level: "A1", kind: "fill-blank",
+    prompt: { ru: "Где приставка? (anmachen)", en: "Where is the prefix? (anmachen)" },
+    template: "Mach bitte das Licht ___!", accepted: ["an"],
+    explanation: { ru: "anmachen → приставка an в конце.", en: "anmachen → prefix an at the end." }, grammarTopicId: "a1-separable",
+  },
+
+  // --- Extra Perfekt ---
+  {
+    id: "ex-perf-gegessen", level: "A1", kind: "fill-blank",
+    prompt: { ru: "Вставьте Partizip II (essen).", en: "Insert the participle (essen)." },
+    template: "Ich habe einen Apfel ___.", accepted: ["gegessen"],
+    explanation: { ru: "essen → gegessen.", en: "essen → gegessen." }, grammarTopicId: "a1-perfekt",
+  },
+  {
+    id: "ex-perf-ist-gegangen", level: "A1", kind: "multiple-choice",
+    prompt: { ru: "Выберите вспомогательный глагол.", en: "Choose the auxiliary." },
+    question: "Er ___ nach Hause gegangen.", options: ["hat", "ist", "sind", "bist"], correctIndex: 1,
+    explanation: { ru: "gehen → sein: er ist gegangen.", en: "gehen → sein: er ist gegangen." }, grammarTopicId: "a1-perfekt",
+  },
+  {
+    id: "ex-perf-gemacht", level: "A1", kind: "fill-blank",
+    prompt: { ru: "Вставьте Partizip II (machen).", en: "Insert the participle (machen)." },
+    template: "Was hast du gestern ___?", accepted: ["gemacht"],
+    explanation: { ru: "machen → gemacht.", en: "machen → gemacht." }, grammarTopicId: "a1-perfekt",
+  },
+
+  // --- Extra word order & questions ---
+  {
+    id: "ex-wo-v2", level: "A1", kind: "multiple-choice",
+    prompt: { ru: "Глагол на 2-м месте. Выберите вариант.", en: "Verb in position 2. Choose." },
+    question: "Heute ___ ich nach Köln.", options: ["ich fahre", "fahre", "fahren", "fährt"], correctIndex: 1,
+    explanation: { ru: "После «Heute» сразу глагол: Heute fahre ich…", en: "After “Heute” the verb comes next: Heute fahre ich…" }, grammarTopicId: "a1-wordorder",
+  },
+  {
+    id: "ex-wo-wie", level: "A1", kind: "fill-blank",
+    prompt: { ru: "Вставьте вопросительное слово (как?).", en: "Insert the question word (how?)." },
+    template: "___ heißt du?", accepted: ["Wie"],
+    explanation: { ru: "Wie = как.", en: "Wie = how." }, grammarTopicId: "a1-wordorder",
+  },
+  {
+    id: "ex-wo-yesno2", level: "A1", kind: "multiple-choice",
+    prompt: { ru: "Вопрос да/нет. Что на первом месте?", en: "Yes/no question. What comes first?" },
+    question: "___ ihr Deutsch?", options: ["Ihr lernt", "Lernt", "Was lernt", "Lernen"], correctIndex: 1,
+    explanation: { ru: "Глагол первый: Lernt ihr Deutsch?", en: "Verb first: Lernt ihr Deutsch?" }, grammarTopicId: "a1-wordorder",
+  },
+
+  // --- Extra conjunctions ---
+  {
+    id: "ex-conjunc-oder", level: "A1", kind: "multiple-choice",
+    prompt: { ru: "Выберите союз.", en: "Choose the conjunction." },
+    question: "Möchtest du Tee ___ Kaffee?", options: ["und", "oder", "aber", "denn"], correctIndex: 1,
+    explanation: { ru: "oder = или.", en: "oder = or." }, grammarTopicId: "a1-conjunctions",
+  },
+  {
+    id: "ex-conjunc-und", level: "A1", kind: "multiple-choice",
+    prompt: { ru: "Выберите союз.", en: "Choose the conjunction." },
+    question: "Er lernt Deutsch ___ er arbeitet.", options: ["und", "oder", "aber", "dass"], correctIndex: 0,
+    explanation: { ru: "und = и.", en: "und = and." }, grammarTopicId: "a1-conjunctions",
+  },
+  {
+    id: "ex-conjunc-aber2", level: "A1", kind: "fill-blank",
+    prompt: { ru: "Вставьте союз (но).", en: "Insert the conjunction (but)." },
+    template: "Sie ist klein, ___ sehr stark.", accepted: ["aber"],
+    explanation: { ru: "aber = но.", en: "aber = but." }, grammarTopicId: "a1-conjunctions",
+  },
+
+  // --- Extra imperative ---
+  {
+    id: "ex-imp-nimm", level: "A1", kind: "multiple-choice",
+    prompt: { ru: "Форма «du» от nehmen.", en: "The “du” form of nehmen." },
+    question: "___ bitte Platz!", options: ["Nehm", "Nimm", "Nehme", "Nimmst"], correctIndex: 1,
+    explanation: { ru: "nehmen → Nimm! (e → i).", en: "nehmen → Nimm! (e → i)." }, grammarTopicId: "a1-imperative",
+  },
+  {
+    id: "ex-imp-kommt", level: "A1", kind: "fill-blank",
+    prompt: { ru: "Форма «ihr» от kommen.", en: "The “ihr” form of kommen." },
+    template: "___ schnell, Kinder!", accepted: ["Kommt", "kommt"],
+    explanation: { ru: "Императив ihr = форма настоящего: Kommt!", en: "ihr imperative = present form: Kommt!" }, grammarTopicId: "a1-imperative",
+  },
+  {
+    id: "ex-imp-geben-sie", level: "A1", kind: "multiple-choice",
+    prompt: { ru: "Форма «Sie» от geben.", en: "The “Sie” form of geben." },
+    question: "___ Sie mir das Buch!", options: ["Geb", "Gib", "Geben", "Gebt"], correctIndex: 2,
+    explanation: { ru: "Императив Sie: инфинитив + Sie: Geben Sie!", en: "Sie imperative: infinitive + Sie: Geben Sie!" }, grammarTopicId: "a1-imperative",
+  },
+
+  // --- Extra time expressions ---
+  {
+    id: "ex-time-amabend", level: "A1", kind: "fill-blank",
+    prompt: { ru: "Вставьте предлог (часть дня).", en: "Insert the preposition (part of day)." },
+    template: "___ Abend sehe ich fern.", accepted: ["Am", "am"],
+    explanation: { ru: "am + часть дня: am Abend.", en: "am + part of day: am Abend." }, grammarTopicId: "a1-time-expressions",
+  },
+  {
+    id: "ex-time-viertel", level: "A1", kind: "multiple-choice",
+    prompt: { ru: "Сколько времени: «Viertel vor neun»?", en: "What time is “Viertel vor neun”?" },
+    question: "Viertel vor neun = ?", options: ["8:45", "9:15", "8:15", "9:45"], correctIndex: 0,
+    explanation: { ru: "Viertel vor neun = без четверти девять = 8:45.", en: "Viertel vor neun = quarter to nine = 8:45." }, grammarTopicId: "a1-time-expressions",
+  },
+
+  // === Batch 2: deepen each grammar lesson to ~10 steps ===
+
+  // sein & haben
+  { id: "ex-sh-ich-bin", level: "A1", kind: "fill-blank", prompt: { ru: "Вставьте «sein» для «ich».", en: "Insert “sein” for “ich”." }, template: "Ich ___ aus der Ukraine.", accepted: ["bin"], explanation: { ru: "ich bin.", en: "ich bin." }, grammarTopicId: "a1-sein-haben", wordId: "sein" },
+  { id: "ex-sh-du-hast", level: "A1", kind: "multiple-choice", prompt: { ru: "Выберите «haben» для «du».", en: "Choose “haben” for “du”." }, question: "___ du Zeit?", options: ["Hast", "Bist", "Habt", "Hat"], correctIndex: 0, explanation: { ru: "du hast.", en: "du hast." }, grammarTopicId: "a1-sein-haben", wordId: "haben" },
+  { id: "ex-sh-sie-ist", level: "A1", kind: "fill-blank", prompt: { ru: "Вставьте «sein» для «sie» (она).", en: "Insert “sein” for “sie” (she)." }, template: "Sie ___ Lehrerin.", accepted: ["ist"], explanation: { ru: "sie ist.", en: "sie ist." }, grammarTopicId: "a1-sein-haben", wordId: "sein" },
+  { id: "ex-sh-sind-wir", level: "A1", kind: "multiple-choice", prompt: { ru: "Выберите «sein» для «wir».", en: "Choose “sein” for “wir”." }, question: "Wir ___ aus Polen.", options: ["sind", "seid", "bin", "ist"], correctIndex: 0, explanation: { ru: "wir sind.", en: "wir sind." }, grammarTopicId: "a1-sein-haben", wordId: "sein" },
+
+  // pronouns
+  { id: "ex-pron-es", level: "A1", kind: "multiple-choice", prompt: { ru: "Выберите местоимение (оно).", en: "Choose the pronoun (it)." }, question: "Das Kind spielt. ___ ist glücklich.", options: ["Er", "Sie", "Es", "Wir"], correctIndex: 2, explanation: { ru: "das Kind → es.", en: "das Kind → es." }, grammarTopicId: "a1-pronouns" },
+  { id: "ex-pron-sie-they", level: "A1", kind: "multiple-choice", prompt: { ru: "Выберите местоимение (они).", en: "Choose the pronoun (they)." }, question: "Die Kinder kommen. ___ sind hier.", options: ["Er", "Sie", "Es", "Du"], correctIndex: 1, explanation: { ru: "die Kinder → sie (они).", en: "die Kinder → sie (they)." }, grammarTopicId: "a1-pronouns" },
+  { id: "ex-pron-du2", level: "A1", kind: "fill-blank", prompt: { ru: "Вставьте местоимение (ты).", en: "Insert the pronoun (you, informal)." }, template: "Wie heißt ___?", accepted: ["du"], explanation: { ru: "du — ты.", en: "du — you." }, grammarTopicId: "a1-pronouns" },
+  { id: "ex-pron-sie-she", level: "A1", kind: "multiple-choice", prompt: { ru: "Выберите местоимение (она).", en: "Choose the pronoun (she)." }, question: "Maria ist hier. ___ ist Studentin.", options: ["Er", "Sie", "Es", "Wir"], correctIndex: 1, explanation: { ru: "Maria → sie (она).", en: "Maria → sie (she)." }, grammarTopicId: "a1-pronouns" },
+
+  // stem-changing verbs
+  { id: "ex-stem-nehmen-du", level: "A1", kind: "conjugation", prompt: { ru: "Проспрягайте «nehmen» для «du».", en: "Conjugate “nehmen” for “du”." }, infinitive: "nehmen", person: "du", accepted: ["nimmst"], explanation: { ru: "e → i: du nimmst.", en: "e → i: du nimmst." }, grammarTopicId: "a1-stem-change", wordId: "nehmen" },
+  { id: "ex-stem-schlafen-er", level: "A1", kind: "conjugation", prompt: { ru: "Проспрягайте «schlafen» для «er».", en: "Conjugate “schlafen” for “er”." }, infinitive: "schlafen", person: "erSieEs", accepted: ["schläft"], explanation: { ru: "a → ä: er schläft.", en: "a → ä: er schläft." }, grammarTopicId: "a1-stem-change" },
+  { id: "ex-stem-sprechen-mc", level: "A1", kind: "multiple-choice", prompt: { ru: "Выберите форму (sprechen).", en: "Choose the form (sprechen)." }, question: "Du ___ gut Deutsch.", options: ["spreche", "sprichst", "spricht", "sprechen"], correctIndex: 1, explanation: { ru: "e → i: du sprichst.", en: "e → i: du sprichst." }, grammarTopicId: "a1-stem-change", wordId: "sprechen" },
+  { id: "ex-stem-fahren-er-mc", level: "A1", kind: "multiple-choice", prompt: { ru: "Выберите форму (fahren).", en: "Choose the form (fahren)." }, question: "Er ___ nach Köln.", options: ["fahre", "fährst", "fährt", "fahren"], correctIndex: 2, explanation: { ru: "a → ä: er fährt.", en: "a → ä: er fährt." }, grammarTopicId: "a1-stem-change" },
+
+  // modal verbs
+  { id: "ex-modal-musst2", level: "A1", kind: "fill-blank", prompt: { ru: "Вставьте «müssen» для «du».", en: "Insert “müssen” for “du”." }, template: "Du ___ die Hausaufgaben machen.", accepted: ["musst"], explanation: { ru: "du musst.", en: "du musst." }, grammarTopicId: "a1-modal-verbs" },
+  { id: "ex-modal-koennen-mc", level: "A1", kind: "multiple-choice", prompt: { ru: "Выберите «können» для «Sie».", en: "Choose “können” for “Sie”." }, question: "___ Sie mir helfen?", options: ["Kann", "Kannst", "Können", "Könnt"], correctIndex: 2, explanation: { ru: "Sie können.", en: "Sie können." }, grammarTopicId: "a1-modal-verbs" },
+  { id: "ex-modal-moechte", level: "A1", kind: "fill-blank", prompt: { ru: "Вставьте «möchten» для «ich».", en: "Insert “möchten” for “ich”." }, template: "Ich ___ einen Tee.", accepted: ["möchte"], explanation: { ru: "ich möchte.", en: "ich möchte." }, grammarTopicId: "a1-modal-verbs" },
+  { id: "ex-modal-darf-mc", level: "A1", kind: "multiple-choice", prompt: { ru: "Выберите «dürfen».", en: "Choose “dürfen”." }, question: "Hier ___ man nicht rauchen.", options: ["darf", "darfst", "dürfen", "darft"], correctIndex: 0, explanation: { ru: "man darf.", en: "man darf." }, grammarTopicId: "a1-modal-verbs" },
+
+  // Akkusativ
+  { id: "ex-akk-den-tisch", level: "A1", kind: "fill-blank", prompt: { ru: "Вставьте артикль (Akkusativ).", en: "Insert the article (accusative)." }, template: "Ich sehe ___ Tisch.", accepted: ["den"], explanation: { ru: "der → den.", en: "der → den." }, grammarTopicId: "a1-akkusativ" },
+  { id: "ex-akk-einen-stuhl", level: "A1", kind: "multiple-choice", prompt: { ru: "Винительный падеж. Выберите артикль.", en: "Accusative. Choose the article." }, question: "Hast du ___ Stuhl?", options: ["ein", "eine", "einen", "einem"], correctIndex: 2, explanation: { ru: "der Stuhl → einen.", en: "der Stuhl → einen." }, grammarTopicId: "a1-akkusativ" },
+  { id: "ex-akk-die-lampe", level: "A1", kind: "fill-blank", prompt: { ru: "Вставьте артикль (Akkusativ, ж. род).", en: "Insert the article (accusative, feminine)." }, template: "Wir kaufen ___ Lampe.", accepted: ["die"], explanation: { ru: "Женский род не меняется: die Lampe.", en: "Feminine unchanged: die Lampe." }, grammarTopicId: "a1-akkusativ" },
+  { id: "ex-akk-den-hund", level: "A1", kind: "multiple-choice", prompt: { ru: "Винительный падеж. Выберите артикль.", en: "Accusative. Choose the article." }, question: "Ich sehe ___ Hund.", options: ["der", "den", "dem", "ein"], correctIndex: 1, explanation: { ru: "der → den.", en: "der → den." }, grammarTopicId: "a1-akkusativ" },
+
+  // Dativ
+  { id: "ex-dat-aus-schweiz", level: "A1", kind: "fill-blank", prompt: { ru: "Вставьте артикль после «aus» (Dativ).", en: "Insert the article after “aus” (dative)." }, template: "Ich komme aus ___ Schweiz.", accepted: ["der"], explanation: { ru: "aus + Dativ: die Schweiz → der Schweiz.", en: "aus + dative: die Schweiz → der Schweiz." }, grammarTopicId: "a1-dativ" },
+  { id: "ex-dat-uns", level: "A1", kind: "multiple-choice", prompt: { ru: "Выберите местоимение (Dativ).", en: "Choose the pronoun (dative)." }, question: "Das Buch gehört ___.", options: ["uns", "unser", "wir", "euch"], correctIndex: 0, explanation: { ru: "gehören + Dativ: uns.", en: "gehören + dative: uns." }, grammarTopicId: "a1-dativ" },
+  { id: "ex-dat-mir2", level: "A1", kind: "fill-blank", prompt: { ru: "Вставьте местоимение (Dativ).", en: "Insert the pronoun (dative)." }, template: "Kannst du ___ helfen?", accepted: ["mir"], explanation: { ru: "helfen + Dativ: mir.", en: "helfen + dative: mir." }, grammarTopicId: "a1-dativ" },
+  { id: "ex-dat-bei", level: "A1", kind: "fill-blank", prompt: { ru: "Вставьте артикль после «bei» (Dativ).", en: "Insert the article after “bei” (dative)." }, template: "Ich wohne bei ___ Mutter.", accepted: ["der"], explanation: { ru: "bei + Dativ: die Mutter → der Mutter.", en: "bei + dative: die Mutter → der Mutter." }, grammarTopicId: "a1-dativ" },
+
+  // possessives
+  { id: "ex-poss-mein-n", level: "A1", kind: "multiple-choice", prompt: { ru: "Выберите притяжательное (ср. род).", en: "Choose the possessive (neuter)." }, question: "Das ist ___ Kind.", options: ["mein", "meine", "meinen", "meinem"], correctIndex: 0, explanation: { ru: "das Kind → mein Kind.", en: "das Kind → mein Kind." }, grammarTopicId: "a1-possessives" },
+  { id: "ex-poss-unsere", level: "A1", kind: "fill-blank", prompt: { ru: "Вставьте «наша» (ж. род).", en: "Insert “our” (feminine)." }, template: "___ Lehrerin ist nett.", accepted: ["Unsere", "unsere"], explanation: { ru: "die Lehrerin → unsere Lehrerin.", en: "die Lehrerin → unsere Lehrerin." }, grammarTopicId: "a1-possessives" },
+  { id: "ex-poss-ihr", level: "A1", kind: "multiple-choice", prompt: { ru: "Выберите притяжательное (её).", en: "Choose the possessive (her)." }, question: "Anna sucht ___ Bruder.", options: ["sein", "ihren", "euer", "dein"], correctIndex: 1, explanation: { ru: "её брат, Akk м.р.: ihren Bruder.", en: "her brother, masc. accusative: ihren Bruder." }, grammarTopicId: "a1-possessives" },
+  { id: "ex-poss-euer", level: "A1", kind: "multiple-choice", prompt: { ru: "Выберите притяжательное (ваш, мн.).", en: "Choose the possessive (your, pl.)." }, question: "Wo ist ___ Haus?", options: ["euer", "eure", "euren", "eurem"], correctIndex: 0, explanation: { ru: "das Haus → euer Haus.", en: "das Haus → euer Haus." }, grammarTopicId: "a1-possessives" },
+
+  // negation
+  { id: "ex-neg-keine-kinder", level: "A1", kind: "fill-blank", prompt: { ru: "Вставьте отрицание (мн. ч.).", en: "Insert the negation (plural)." }, template: "Sie haben ___ Kinder.", accepted: ["keine"], explanation: { ru: "Мн. число → keine.", en: "Plural → keine." }, grammarTopicId: "a1-negation" },
+  { id: "ex-neg-nicht-hier", level: "A1", kind: "multiple-choice", prompt: { ru: "Отрицание. Выберите слово.", en: "Negation. Choose the word." }, question: "Er wohnt ___ hier.", options: ["kein", "keine", "nicht", "nichts"], correctIndex: 2, explanation: { ru: "Глагол/наречие → nicht.", en: "Verb/adverb → nicht." }, grammarTopicId: "a1-negation" },
+  { id: "ex-neg-kein-hund", level: "A1", kind: "multiple-choice", prompt: { ru: "Отрицание. Выберите слово.", en: "Negation. Choose the word." }, question: "Ich habe ___ Hund.", options: ["nicht", "kein", "keine", "keinen"], correctIndex: 1, explanation: { ru: "der Hund (Akk: keinen) — но в Nom. kein.", en: "der Hund → kein (here Akk: keinen)." }, grammarTopicId: "a1-negation" },
+  { id: "ex-neg-nicht-gut", level: "A1", kind: "multiple-choice", prompt: { ru: "Отрицание прилагательного.", en: "Negating an adjective." }, question: "Das Essen ist ___ gut.", options: ["kein", "keine", "nicht", "nichts"], correctIndex: 2, explanation: { ru: "Прилагательное → nicht.", en: "Adjective → nicht." }, grammarTopicId: "a1-negation" },
+
+  // separable verbs
+  { id: "ex-sep-einkaufst", level: "A1", kind: "multiple-choice", prompt: { ru: "Глагол einkaufen. Выберите форму.", en: "The verb einkaufen. Choose the form." }, question: "___ du heute ein?", options: ["Einkaufst", "Kaufst", "Kauf", "Kaufen"], correctIndex: 1, explanation: { ru: "Kaufst du heute ein? — приставка ein в конце.", en: "Kaufst du heute ein? — prefix ein at the end." }, grammarTopicId: "a1-separable" },
+  { id: "ex-sep-mit", level: "A1", kind: "fill-blank", prompt: { ru: "Где приставка? (mitkommen)", en: "Where is the prefix? (mitkommen)" }, template: "Wir gehen ins Kino. Kommst du ___?", accepted: ["mit"], explanation: { ru: "mitkommen → mit в конце.", en: "mitkommen → mit at the end." }, grammarTopicId: "a1-separable" },
+  { id: "ex-sep-fernsehen", level: "A1", kind: "fill-blank", prompt: { ru: "Где приставка? (fernsehen)", en: "Where is the prefix? (fernsehen)" }, template: "Am Abend sehe ich ___.", accepted: ["fern"], explanation: { ru: "fernsehen → fern в конце.", en: "fernsehen → fern at the end." }, grammarTopicId: "a1-separable" },
+  { id: "ex-sep-auf2", level: "A1", kind: "multiple-choice", prompt: { ru: "Где приставка? (aufstehen)", en: "Where is the prefix? (aufstehen)" }, question: "Er steht früh ___.", options: ["auf", "an", "ein", "mit"], correctIndex: 0, explanation: { ru: "aufstehen → auf в конце.", en: "aufstehen → auf at the end." }, grammarTopicId: "a1-separable" },
+
+  // Perfekt
+  { id: "ex-perf-haben-mc", level: "A1", kind: "multiple-choice", prompt: { ru: "Выберите вспомогательный глагол.", en: "Choose the auxiliary." }, question: "Wir ___ Pizza gegessen.", options: ["sind", "haben", "seid", "ist"], correctIndex: 1, explanation: { ru: "essen → haben.", en: "essen → haben." }, grammarTopicId: "a1-perfekt" },
+  { id: "ex-perf-gewohnt", level: "A1", kind: "fill-blank", prompt: { ru: "Вставьте Partizip II (wohnen).", en: "Insert the participle (wohnen)." }, template: "Ich habe in Berlin ___.", accepted: ["gewohnt"], explanation: { ru: "wohnen → gewohnt.", en: "wohnen → gewohnt." }, grammarTopicId: "a1-perfekt" },
+  { id: "ex-perf-gekommen", level: "A1", kind: "multiple-choice", prompt: { ru: "Выберите вспомогательный глагол.", en: "Choose the auxiliary." }, question: "Sie ___ spät gekommen.", options: ["hat", "ist", "sind", "haben"], correctIndex: 1, explanation: { ru: "kommen → sein: sie ist gekommen.", en: "kommen → sein: sie ist gekommen." }, grammarTopicId: "a1-perfekt" },
+  { id: "ex-perf-getrunken", level: "A1", kind: "fill-blank", prompt: { ru: "Вставьте Partizip II (trinken).", en: "Insert the participle (trinken)." }, template: "Ich habe Wasser ___.", accepted: ["getrunken"], explanation: { ru: "trinken → getrunken.", en: "trinken → getrunken." }, grammarTopicId: "a1-perfekt" },
+
+  // word order & questions
+  { id: "ex-wo-warum", level: "A1", kind: "fill-blank", prompt: { ru: "Вставьте вопросительное слово (почему?).", en: "Insert the question word (why?)." }, template: "___ kommst du nicht?", accepted: ["Warum"], explanation: { ru: "Warum = почему.", en: "Warum = why." }, grammarTopicId: "a1-wordorder" },
+  { id: "ex-wo-wo", level: "A1", kind: "multiple-choice", prompt: { ru: "Выберите вопросительное слово (где?).", en: "Choose the question word (where?)." }, question: "___ wohnst du?", options: ["Wo", "Wer", "Was", "Wie"], correctIndex: 0, explanation: { ru: "Wo = где.", en: "Wo = where." }, grammarTopicId: "a1-wordorder" },
+  { id: "ex-wo-time-v2", level: "A1", kind: "multiple-choice", prompt: { ru: "Глагол на 2-м месте.", en: "Verb in position 2." }, question: "Morgen ___ wir nach Berlin.", options: ["wir fahren", "fahren", "fährt", "fahre"], correctIndex: 1, explanation: { ru: "Morgen fahren wir… — глагол вторым.", en: "Morgen fahren wir… — verb second." }, grammarTopicId: "a1-wordorder" },
+  { id: "ex-wo-wann", level: "A1", kind: "fill-blank", prompt: { ru: "Вставьте вопросительное слово (когда?).", en: "Insert the question word (when?)." }, template: "___ kommt der Bus?", accepted: ["Wann"], explanation: { ru: "Wann = когда.", en: "Wann = when." }, grammarTopicId: "a1-wordorder" },
+
+  // conjunctions
+  { id: "ex-conjunc-denn2", level: "A1", kind: "multiple-choice", prompt: { ru: "Выберите союз.", en: "Choose the conjunction." }, question: "Ich esse, ___ ich habe Hunger.", options: ["und", "oder", "aber", "denn"], correctIndex: 3, explanation: { ru: "denn = потому что.", en: "denn = because." }, grammarTopicId: "a1-conjunctions" },
+  { id: "ex-conjunc-aber-mc", level: "A1", kind: "multiple-choice", prompt: { ru: "Выберите союз.", en: "Choose the conjunction." }, question: "Ich möchte kommen, ___ ich habe keine Zeit.", options: ["und", "aber", "oder", "denn"], correctIndex: 1, explanation: { ru: "aber = но.", en: "aber = but." }, grammarTopicId: "a1-conjunctions" },
+  { id: "ex-conjunc-und2", level: "A1", kind: "fill-blank", prompt: { ru: "Вставьте союз (и).", en: "Insert the conjunction (and)." }, template: "Anna ___ Tom sind Freunde.", accepted: ["und"], explanation: { ru: "und = и.", en: "und = and." }, grammarTopicId: "a1-conjunctions" },
+  { id: "ex-conjunc-oder2", level: "A1", kind: "multiple-choice", prompt: { ru: "Выберите союз.", en: "Choose the conjunction." }, question: "Kommst du heute ___ morgen?", options: ["und", "oder", "aber", "denn"], correctIndex: 1, explanation: { ru: "oder = или.", en: "oder = or." }, grammarTopicId: "a1-conjunctions" },
+
+  // imperative
+  { id: "ex-imp-geh", level: "A1", kind: "fill-blank", prompt: { ru: "Форма «du» от gehen.", en: "The “du” form of gehen." }, template: "___ nach Hause!", accepted: ["Geh", "geh"], explanation: { ru: "gehen → Geh!", en: "gehen → Geh!" }, grammarTopicId: "a1-imperative" },
+  { id: "ex-imp-seid", level: "A1", kind: "multiple-choice", prompt: { ru: "Форма «ihr» от sein.", en: "The “ihr” form of sein." }, question: "___ bitte leise!", options: ["Sei", "Seid", "Seien", "Bist"], correctIndex: 1, explanation: { ru: "ihr → Seid leise!", en: "ihr → Seid leise!" }, grammarTopicId: "a1-imperative" },
+  { id: "ex-imp-warten-sie", level: "A1", kind: "fill-blank", prompt: { ru: "Форма «Sie» от warten.", en: "The “Sie” form of warten." }, template: "___ Sie bitte einen Moment!", accepted: ["Warten"], explanation: { ru: "Sie: инфинитив + Sie: Warten Sie!", en: "Sie: infinitive + Sie: Warten Sie!" }, grammarTopicId: "a1-imperative" },
+  { id: "ex-imp-lern", level: "A1", kind: "fill-blank", prompt: { ru: "Форма «du» от lernen.", en: "The “du” form of lernen." }, template: "___ fleißig Deutsch!", accepted: ["Lern", "lern", "Lerne", "lerne"], explanation: { ru: "lernen → Lern(e)!", en: "lernen → Lern(e)!" }, grammarTopicId: "a1-imperative" },
+
+  // time expressions (top-up)
+  { id: "ex-time-um8", level: "A1", kind: "fill-blank", prompt: { ru: "Вставьте предлог (точное время).", en: "Insert the preposition (clock time)." }, template: "Der Unterricht beginnt ___ 8 Uhr.", accepted: ["um"], explanation: { ru: "um + точное время.", en: "um + clock time." }, grammarTopicId: "a1-time-expressions" },
+  { id: "ex-time-halb-mc", level: "A1", kind: "multiple-choice", prompt: { ru: "Сколько времени: «halb sieben»?", en: "What time is “halb sieben”?" }, question: "halb sieben = ?", options: ["6:30", "7:30", "6:15", "7:00"], correctIndex: 0, explanation: { ru: "halb sieben = 6:30 (к следующему часу).", en: "halb sieben = 6:30 (toward the next hour)." }, grammarTopicId: "a1-time-expressions" },
 ];
